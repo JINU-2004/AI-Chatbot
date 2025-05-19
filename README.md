@@ -56,3 +56,96 @@ Using **Retrieval-Augmented Generation (RAG)** techniques, the chatbot leverages
 ├── static/ 🎨 # Static assets (CSS, JS, images)
 
 └── README.md 📄 # Project documentation
+
+## 🚀 How to Run the Project: Step-by-Step Guide
+
+### 🧱 1. Clone the Repository
+
+git clone <your-repo-url>
+cd <your-project-folder>
+
+### 🛠️ 2. Create & Activate a Virtual Environment (Recommended)
+
+- Create virtual environment
+  
+python -m venv venv
+
+- Activate it On Windows
+  
+venv\Scripts\activate
+
+- On macOS/Linux
+  
+source venv/bin/activate
+
+### 📦 3. Install Required Dependencies
+
+pip install -r requirements.txt
+
+### ⚙️ 4. Configure the Environment
+
+--> Edit the database configuration in Config/dbconfig.py:
+
+-MYSQL_HOST = "localhost"
+
+-MYSQL_USER = "your_user_name"
+
+-MYSQL_PASSWORD = "your_password"
+
+-MYSQL_DB = "your_db_name"
+
+-MYSQL_PORT = 3306
+
+--> ✅ Also, make sure to:
+
+-Add your Pinecone and Gemini API keys in:
+
+1.chatbot.py
+
+2.chatbot_data_manager.py
+
+###🚀 5. Run the FastAPI Server
+
+uvicorn main:app --reload
+
+--> 🌐 Open your browser and go to:
+
+http://127.0.0.1:8000
+
+### 🔐 6. Admin Login
+
+-Visit: http://127.0.0.1:8000/login
+
+-Use your admin credentials to log in
+
+### 📤 7. Upload Notification PDFs
+
+--> Use the upload interface to:
+
+-✅ Upload new PDF notifications
+
+-🗑️ Remove outdated ones
+
+-PDFs are processed, summarized, and indexed in Pinecone for efficient retrieval
+
+### 💬 8. Chat with the AI
+
+--> Make a POST request to the /chatbot endpoint with JSON:
+
+{
+
+  "chat": "Your question about the notifications"
+  
+}
+
+-The bot will respond with a clear, concise summary based on the uploaded PDFs
+
+### 🧩 9. Customize or Extend
+You can:
+
+- 📚 Add new PDF processing logic in chatbot_data_manager.py
+
+- 🧠 Tweak the AI prompt and logic in chatbot.py
+
+- 🔐 Update login mechanisms in login.py
+
