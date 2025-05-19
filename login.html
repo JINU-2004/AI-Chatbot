@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <style>
+      /*login form */
+      body {
+        background-image: url("static/image/back3.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      #id1 {
+        color: white;
+      }
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        background-color: #020227;
+        width: 300px;
+        margin: 230px auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="submit"] {
+        width: 90%;
+        padding: 10px;
+        margin: 6px 0;
+        display: block;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        width: 97%;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      id="login-form"
+      action="http://127.0.0.1:8000/api/login"
+      method="post"
+      enctype="application/json"
+    >
+      <h2 id="id1">Admin Login</h2>
+      <input
+        type="text"
+        name="username"
+        id="user"
+        placeholder="Username"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        id="pass"
+        placeholder="Password"
+        required
+      />
+      <input type="submit" id="login-btn" value="Login" />
+    </form>
+
+    <script></script>
+  </body>
+</html>
