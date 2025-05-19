@@ -104,7 +104,7 @@ pip install -r requirements.txt
 
 2.chatbot_data_manager.py
 
-###🚀 5. Run the FastAPI Server
+### 🚀 5. Run the FastAPI Server
 
 uvicorn main:app --reload
 
